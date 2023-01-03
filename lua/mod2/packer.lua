@@ -58,6 +58,6 @@ return require('packer').startup(function(use)
 
 	--install commentary and configure the multi line commenting
     use 'tpope/vim-commentary'
-	--install nerd tree or something similar
+    use 'github/copilot.vim'
 
 end)
