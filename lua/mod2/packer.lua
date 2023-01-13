@@ -20,9 +20,7 @@ return require('packer').startup(function(use)
 	})
 
 	use 'theprimeagen/harpoon'
-
 	use('nvim-treesitter/nvim-treesitter', {run =  ':TSUpdate'})
-
     use 'mbbill/undotree'
 	use 'tpope/vim-fugitive'
 
@@ -59,5 +57,8 @@ return require('packer').startup(function(use)
 	--install commentary and configure the multi line commenting
     use 'tpope/vim-commentary'
     use 'github/copilot.vim'
+    --insta vim prettier
+    use 'prettier/vim-prettier'
+
 
 end)
