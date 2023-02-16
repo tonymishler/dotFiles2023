@@ -11,6 +11,7 @@ return require('packer').startup(function(use)
 		-- or                            , branch = '0.1.x',
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
+
 	use({
 		'rose-pine/neovim',
 		as = 'rose-pine',
@@ -18,6 +19,10 @@ return require('packer').startup(function(use)
 			vim.cmd('colorscheme rose-pine')
 		end
 	})
+
+  --gruvbox
+  use 'morhetz/gruvbox'
+
 
 	use 'theprimeagen/harpoon'
 	use('nvim-treesitter/nvim-treesitter', {run =  ':TSUpdate'})
@@ -59,6 +64,5 @@ return require('packer').startup(function(use)
     use 'github/copilot.vim'
     --insta vim prettier
     use 'prettier/vim-prettier'
-
 
 end)
