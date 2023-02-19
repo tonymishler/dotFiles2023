@@ -1,6 +1,9 @@
 vim.wo.number = true;
 vim.wo.relativenumber = true;
 vim.opt.guicursor = ""
+--enable emoji
+vim.opt.emoji = true
+
 
 vim.opt.tabstop = 2
 vim.opt.softtabstop =2
