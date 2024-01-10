@@ -85,5 +85,9 @@ return require('packer').startup(function(use)
     use 'nvim-tree/nvim-web-devicons'
     use {'romgrk/barbar.nvim', requires = 'nvim-web-devicons'}
 
+    --prettier
+    -- use('neovim/nvim-lspconfig')
+    -- use('jose-elias-alvarez/null-ls.nvim')
+    -- use('MunifTanjim/prettier.nvim')
 
 end)
