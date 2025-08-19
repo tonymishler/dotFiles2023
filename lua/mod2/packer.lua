@@ -12,6 +12,18 @@ return require('packer').startup(function(use)
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
+  use {
+    "williamboman/mason.nvim"
+  }
+
+	use({
+		'rose-pine/neovim',
+		as = 'rose-pine',
+		config = function()
+			vim.cmd('colorscheme rose-pine')
+		end
+	})
+
   --gruvbox
   use 'morhetz/gruvbox'
 
@@ -21,27 +33,6 @@ return require('packer').startup(function(use)
     use 'mbbill/undotree'
 	use 'tpope/vim-fugitive'
 
-	use {
-		'VonHeikemen/lsp-zero.nvim',
-		requires = {
-			-- LSP Support
-			{'neovim/nvim-lspconfig'},
-			{'williamboman/mason.nvim'},
-			{'williamboman/mason-lspconfig.nvim'},
-
-			-- Autocompletion
-			{'hrsh7th/nvim-cmp'},
-			{'hrsh7th/cmp-buffer'},
-			{'hrsh7th/cmp-path'},
-			{'saadparwaiz1/cmp_luasnip'},
-			{'hrsh7th/cmp-nvim-lsp'},
-			{'hrsh7th/cmp-nvim-lua'},
-
-			-- Snippets
-			{'L3MON4D3/LuaSnip'},
-			{'rafamadriz/friendly-snippets'},
-		}
-	}
     --use 'OmniSharp/omnisharp-vim'
     use {
             "OmniSharp/omnisharp-vim",
@@ -55,7 +46,11 @@ return require('packer').startup(function(use)
     use 'tpope/vim-commentary'
     use 'github/copilot.vim'
     --insta vim prettier
-    use 'prettier/vim-prettier'
+    use('neovim/nvim-lspconfig')
+    use('jose-elias-alvarez/null-ls.nvim')
+    use('MunifTanjim/prettier.nvim')
+
+
 
 
     use({
@@ -71,13 +66,35 @@ return require('packer').startup(function(use)
       }
     })
 
+    --lsp-zero
+    use {
+  'VonHeikemen/lsp-zero.nvim',
+  branch = 'v3.x',
+  requires = {
+    --- Uncomment the two plugins below if you want to manage the language servers from neovim
+    {'williamboman/mason.nvim'},
+    {'williamboman/mason-lspconfig.nvim'},
+
+    -- LSP Support
+    {'neovim/nvim-lspconfig'},
+    -- Autocompletion
+    {'hrsh7th/nvim-cmp'},
+    {'hrsh7th/cmp-nvim-lsp'},
+    {'L3MON4D3/LuaSnip'},
+  }
+}
+
+    
+
 
 
     --tab settings
     use 'nvim-tree/nvim-web-devicons'
     use {'romgrk/barbar.nvim', requires = 'nvim-web-devicons'}
 
-    use 'tonymishler/create-ef-resource'
-
+    --prettier
+    -- use('neovim/nvim-lspconfig')
+    -- use('jose-elias-alvarez/null-ls.nvim')
+    -- use('MunifTanjim/prettier.nvim')
 
 end)
